@@ -14,17 +14,25 @@ body {
 
 .hero {
   width: 100%;
-  height: 40vh;
+  height: 55vh;
+  position: relative;
   background: #00ccbc;
   color: #fff;
 }
 
 .hero img {
-    width: 40%;
+  width: 400px;
+  position: absolute;
+  top: -30px;
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .wrapper {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -48,5 +56,12 @@ body {
 
 .rest-picture {
   width: 100%;
-  justify-content: flex-end;
+}
+
+/*Responsiveness*/
+@media screen and (min-width: 768px) {
+    .hero img{
+        right: 0;
+        width: 638px;
+    }
 }
