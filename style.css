@@ -55,14 +55,13 @@ body {
 button {
   color: #828585;
   position: relative;
-  top: 500px; 
+  top: 540px;
   margin: 4px;
   border: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 button:hover {
-  
 }
 
 .wrapper {
@@ -95,24 +94,24 @@ button:hover {
 
 /*Responsiveness*/
 @media screen and (min-width: 768px) {
-    .hero-img {
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100%;
-      width: 50%;
-      top: 0;
-      right: 0;
-    }
+  .hero-img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    right: 0;
+  }
 
-    .logo {
-      left: 0;
-      top: 0;
-    }
+  .logo {
+    left: 0;
+    top: 0;
+  }
 
-    .hero-text {
-      font-size: 50px;
-      top: 165px;
-    }
+  .hero-text {
+    font-size: 50px;
+    top: 165px;
+  }
 }
