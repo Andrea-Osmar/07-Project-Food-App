@@ -9,8 +9,13 @@
 </head>
 
 <body>
-    <header class="hero"><div class="hero-img"></div></header>
-    <main class="wrapper">
+    <header class="hero">
+        <div class="hero-img"></div>
+        <button class="btn" onclick="fetchRestaurants(3)">$</button>
+        <button class="btn" onclick="fetchRestaurants(3)">$$</button>
+        <button class="btn" onclick="fetchRestaurants(3)">$$$</button>
+    </header>
+    <main id="wrapper" class="wrapper">
         <article class="restaurant">
             <div class="text-section">
                 <h1 class="rest-name"></h1>
