@@ -14,21 +14,31 @@ body {
 
 .hero {
   width: 100%;
-  height: 55vh;
+  height: 65vh;
   position: relative;
   background: #00ccbc;
   color: #fff;
 }
 
-.hero img {
+.hero-img {
+  background-image: url("./heroimage.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+/* .hero-img {
+  background-image: url(./heroimage.jpg);
   width: 400px;
   position: absolute;
-  top: -30px;
+  /* top: -30px;
   flex: 1;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 .wrapper {
   display: flex;
