@@ -23,6 +23,7 @@ const fetchRestaurants = (range) => {
       return response.json();
     })
     .then((json) => {
+      console.log(json)
       let newArray;
       if (range === 2 || range === 3 || range === 4) {
         newArray = filteredPriceRange(json, range);
