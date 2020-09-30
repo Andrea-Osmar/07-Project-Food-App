@@ -35,7 +35,6 @@ const fetchRestaurants = (range) => {
       newArray.forEach(generateHTML);
     });
 };
-fetchRestaurants();
 
 const restaurantInformation = (information) => {
   const restName = information.restaurant.name;
@@ -56,22 +55,21 @@ const filteredPriceRange = (json, range) => {
   return filteredNewArray;
 };
 
-const generateHTML = (restaurantArray) => {
+const generateHTML = (restaurant) => {
   let restaurantArticle = `<article class="restaurant">`;
-  restaurantArticle += `<div>`;
-  restaurantArticle += `<h1 class="rest-name">${restaurantArray.restName}</h1>`;
-  restaurantArticle += `<p class="rest-address">${restaurantArray.restAddress}</p>`;
-  restaurantArticle += `<p class="rest-average-cost">${restaurantArray.averageCost}</p>`;
-  restaurantArticle += `<p class="rest-rating">${restaurantArray.averageRating}</p>`;
+  restaurantArticle += `<div class="text-section">`;
+  restaurantArticle += `<h1 class="rest-name">${restaurant.restName}</h1>`;
+  restaurantArticle += `<p class="rest-address">${restaurant.restAddress}</p>`;
+  restaurantArticle += `<p class="rest-average-cost">${restaurant.averageCost}</p>`;
+  restaurantArticle += `<p class="rest-rating">${restaurant.averageRating}</p>`;
   restaurantArticle += `</div>`;
-  restaurantArticle += `<div class="rest-picture" id="rest-picture">`;
-  //restaurantArticle += `<img class="rest-picture" id="rest-picture" />`;
+  restaurantArticle += `<div >`;
+  restaurantArticle += `<img class="rest-picture" src="${restaurant.image}"/>`;
   restaurantArticle += `</div>`;
   restaurantArticle += `</article>`;
   document.getElementById('wrapper').innerHTML += restaurantArticle;
-  let imageURL = "url('" + restaurantArray.image + "')";
-  console.log(imageURL);
-  // console.log(document.getElementById('rest-picture'));
-  document.getElementById('rest-picture').style.backgroundImage = imageURL;
-  // console.log(document.getElementById('rest-picture').src);
 };
+
+/*** EXECUTION ***/
+
+fetchRestaurants();
