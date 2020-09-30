@@ -1,9 +1,9 @@
 /*** VARIABLES ***/
 
-const cityId = '89';
-const cuisineId = '25';
-const sort = 'rating';
-const order = 'desc';
+const cityId = "89";
+const cuisineId = "25";
+const sort = "rating";
+const order = "desc";
 const API_URL = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city&count=10&cuisines=${cuisineId}`;
 const API_URL_SORT = `https://developers.zomato.com/api/v2.1/search?entity_id=${cityId}&entity_type=city&count=10&cuisines=${cuisineId}&sort=${sort}&order=${order}`;
 const API_KEY = `43d79a2b3a262a9d099962eba283ced8`;
@@ -12,8 +12,8 @@ const API_KEY = `43d79a2b3a262a9d099962eba283ced8`;
 
 const request = new Request(API_URL, {
   headers: new Headers({
-    Accept: 'application/json',
-    'user-key': API_KEY,
+    Accept: "application/json",
+    "user-key": API_KEY,
   }),
 });
 
@@ -23,14 +23,14 @@ const fetchRestaurants = (range) => {
       return response.json();
     })
     .then((json) => {
-      let restaurantArray = json.restaurants;
       let newArray;
-      if (range === 1 || range === 2 || range === 3) {
+      if (range === 2 || range === 3 || range === 4) {
         newArray = filteredPriceRange(json, range);
         newArray = newArray.map(restaurantInformation);
-        document.getElementById('wrapper').innerHTML = '';
+        document.getElementById("wrapper").innerHTML = "";
       } else {
         newArray = json.restaurants.map(restaurantInformation);
+        document.getElementById("wrapper").innerHTML = "";
       }
       newArray.forEach(generateHTML);
     });
@@ -41,7 +41,7 @@ const restaurantInformation = (information) => {
   const restAddress = information.restaurant.location.address;
   const averageCost =
     information.restaurant.average_cost_for_two +
-    ' ' +
+    " " +
     information.restaurant.currency;
   const averageRating = information.restaurant.user_rating.aggregate_rating;
   const image = information.restaurant.featured_image;
@@ -67,7 +67,7 @@ const generateHTML = (restaurant) => {
   restaurantArticle += `<img class="rest-picture" src="${restaurant.image}"/>`;
   restaurantArticle += `</div>`;
   restaurantArticle += `</article>`;
-  document.getElementById('wrapper').innerHTML += restaurantArticle;
+  document.getElementById("wrapper").innerHTML += restaurantArticle;
 };
 
 /*** EXECUTION ***/
