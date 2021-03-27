@@ -10,4 +10,4 @@ Our team should create a food site using Zomato API to list Chinese restaurants 
 
 
 ### See it live here
-[Food app](chinesefood-toronto.netlify.app)
+[Food app](https://zoomatofood.netlify.app/)
